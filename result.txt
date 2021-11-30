@@ -1,0 +1,78 @@
+alexshap@ALEXANDERs-MacBook-Pro hw5 % python3 -m doctest -v -o NORMALIZE_WHITESPACE morse.py
+Trying:
+    encode('SOS')
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode('SOS')
+Expecting:
+    '...   ---   ...'
+ok
+Trying:
+    encode(1)
+Expecting:
+    Traceback (most recent call last):
+    ...
+    TypeError: 'int' object is not iterable
+ok
+2 items had no tests:
+    morse
+    morse.decode
+1 items passed all tests:
+   3 tests in morse.encode
+3 tests in 3 items.
+3 passed and 0 failed.
+Test passed.
+
+
+alexshap@ALEXANDERs-MacBook-Pro hw5 % python3 -m pytest -v test_morse_decode.py
+================================================================== test session starts ===================================================================
+platform darwin -- Python 3.9.8, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /usr/local/opt/python@3.9/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /Users/alexshap/homework_avito_python_5/hw5
+plugins: anyio-3.3.1
+collected 3 items
+
+test_morse_decode.py::test_decode[-] PASSED                                                                                                        [ 33%]
+test_morse_decode.py::test_decode[... --- ...-SOS] PASSED                                                                                          [ 66%]
+test_morse_decode.py::test_decode[- .... -..--THX] PASSED                                                                                          [100%]
+
+=================================================================== 3 passed in 0.01s ====================================================================
+
+alexshap@ALEXANDERs-MacBook-Pro hw5 % ./test_one_hot_encoder.py -v
+test_basic (__main__.TestOneHotEncoder) ... ok
+test_empty (__main__.TestOneHotEncoder) ... ok
+test_repeated (__main__.TestOneHotEncoder) ... ok
+test_single_input (__main__.TestOneHotEncoder) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+
+
+alexshap@ALEXANDERs-MacBook-Pro hw5 % pytest test_one_hot_encoder_pytest.py -v
+================================================================== test session starts ===================================================================
+platform darwin -- Python 3.9.8, pytest-6.2.5, py-1.11.0, pluggy-1.0.0 -- /usr/local/opt/python@3.9/bin/python3.9
+cachedir: .pytest_cache
+rootdir: /Users/alexshap/homework_avito_python_5/hw5
+plugins: anyio-3.3.1
+collected 1 item
+
+test_one_hot_encoder_pytest.py::test_one_hot_encoder PASSED                                                                                        [100%]
+
+=================================================================== 1 passed in 0.02s ====================================================================
+
+alexshap@ALEXANDERs-MacBook-Pro hw5 % ./test_what_is_year_now.py -v
+test_basic (__main__.TestWhatIsYearNow) ... ok
+test_current_date_time_format_YYYY_MM_DD (__main__.TestWhatIsYearNow) ... ok
+test_current_date_time_format_YYYY_MM_DD_dots (__main__.TestWhatIsYearNow) ... ok
+test_current_date_time_invalid_format (__main__.TestWhatIsYearNow) ... ok
+test_unreachable_external_api (__main__.TestWhatIsYearNow) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.002s
+
+OK
+
